@@ -1,0 +1,38 @@
+# Dependências do Node.js
+node_modules/
+npm-debug.log
+package-lock.json
+yarn.lock
+
+# Arquivos de configuração do ambiente
+.env
+.env.local
+.env.development
+.env.production
+
+# Logs
+logs/
+*.log
+debug.log
+error.log
+pm2.log
+
+# Diretórios de build
+dist/
+build/
+out/
+
+# Arquivos temporários e de cache
+*.tmp
+*.cache
+.tmp/
+.cache/
+.DS_Store  # Arquivo gerado pelo macOS (se você usar)
+
+# Configuração de editores de código (ex: VSCode, JetBrains)
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Arquivos de dependências locais
+node_modules/
