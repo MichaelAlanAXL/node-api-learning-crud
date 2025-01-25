@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt');
 // Importar dados do usuário no banco de dados
 const User = require('../models/users');
 
@@ -28,11 +29,20 @@ module.exports = {
         }
     },
 
-    // Função para criar novo usuário
+    // Função para criar novo usuário com senha criptografada
     createUser: async (req, res) => {
         const { name, email, password } = req.body;
         try {
-            const newUser = await User.create({ name, email, password }); // metodo para criar novo usuario no banco
+            // Gerando hash
+            const saltRounds = 10;
+            const hashedPassword = await bcrypt.hash(password, saltRounds);
+
+            const newUser = await User.create({ 
+                name, 
+                email, 
+                password: hashedPassword 
+            });
+
             res.status(201).json(newUser);
         } catch (error) {
             console.error(error);
@@ -51,7 +61,11 @@ module.exports = {
             }
             user.name = name || user.name;
             user.email = email || user.email;
-            user.password = password || user.password;
+            if (password) {
+                const saltRounds = 10;
+                user.password = await bcrypt.hash(password, saltRounds);
+            }
+
             await user.save(); // Atualizando dados no banco
             res.json(user);
         } catch (error) {
