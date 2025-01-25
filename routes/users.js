@@ -7,7 +7,7 @@ const userController = require('../controllers/userController');
 // Listar todos os usuários
 router.get('/', userController.getAllUsers);
 
-// Listar usuário pelo ID
+// Listar um único usuário pelo ID 
 router.get('/:id', userController.getUserById);
 
 // Criar novo usuário

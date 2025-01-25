@@ -8,7 +8,7 @@ Esta é uma API simples de usuários sendo construída com Node.js e Sequelize p
 
 - **Criar Usuário**: Permite a criação de novos usuários com nome, email e senha. **(pronto)**
 - **Listar Usuários**: Retorna todos os usuários cadastrados no banco de dados.  **(pronto)**
-- **Buscar Usuário por ID**: Permite buscar um usuário específico pelo ID.  **(em andamento)**
+- **Buscar Usuário por ID**: Permite buscar um usuário específico pelo ID.  **(pronto)**
 - **Atualizar Usuário**: Atualiza os dados de um usuário existente.  **(em andamento)**
 - **Deletar Usuário**: Deleta um usuário com base no ID.  **(em andamento)**
 
